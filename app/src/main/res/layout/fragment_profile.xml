@@ -2,14 +2,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="Fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Profile Fragment"
-        android:textSize="30dp"
-        android:textAlignment="center" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="34dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="200dp"
+            >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_edit_24"
+                />
+
+        <TextView
+            android:id="@+id/edit"
+            style="@style/pa_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="Edit profile" />
+
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/teal_green"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="16dp"
+            app:cardPreventCornerOverlap="true">
+
+            <ImageView
+                android:id="@+id/ap_img"
+                android:layout_width="119dp"
+                android:layout_height="104dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/img_btn1"
+                android:src="@drawable/profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.036"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="130dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/pa_name"
+                    style="@style/pa_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:gravity="center"
+                    android:text="Name" />
+
+                <TextView
+                    android:id="@+id/pa_email"
+                    style="@style/pa_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Email" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Your Overall Contribution"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </FrameLayout>
