@@ -2,5 +2,6 @@
     <string name="app_name">Solution_Challenge</string>
     <string name="img_btn" />
     <string name="img_btn1">Image Btn</string>
+    <string name="maps_api">AIzaSyAVO2TrXEatbnGGg3gQGO8Kaelry99rz8o</string>
 
 </resources>
