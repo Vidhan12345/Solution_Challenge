@@ -54,7 +54,7 @@
             app:cardPreventCornerOverlap="true">
 
             <ImageView
-                android:id="@+id/ap_img"
+                android:id="@+id/pf_profile_img"
                 android:layout_width="119dp"
                 android:layout_height="104dp"
                 android:layout_marginTop="16dp"
@@ -74,7 +74,7 @@
 
 
                 <TextView
-                    android:id="@+id/pa_name"
+                    android:id="@+id/pf_name"
                     style="@style/pa_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                     android:text="Name" />
 
                 <TextView
-                    android:id="@+id/pa_email"
+                    android:id="@+id/pf_email"
                     style="@style/pa_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
