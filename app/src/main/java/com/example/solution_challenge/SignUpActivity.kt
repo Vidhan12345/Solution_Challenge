@@ -45,7 +45,7 @@ class SignUpActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(ContentValues.TAG, "createUserWithEmail:success")
                     val user = mAuth.currentUser
-                    addUserToDatabase(name,email,mAuth.currentUser?.uid!!)
+                    addUserToDatabase(name,email,user?.uid!!)
                     val intent = Intent(this@SignUpActivity,MainActivity::class.java)
                     Toast.makeText(this,"Added to database",Toast.LENGTH_LONG).show()
                     finish()
@@ -65,7 +65,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun addUserToDatabase(name: String, email: String, uid: String?) {
 
-        mDbRef = FirebaseDatabase.getInstance().getReference()
+        mDbRef = FirebaseDatabase.getInstance().reference
 
         mDbRef.child("user").child(uid!!).setValue(User(name, email, uid))
 

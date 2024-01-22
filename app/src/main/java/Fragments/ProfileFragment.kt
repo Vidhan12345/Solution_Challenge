@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.solution_challenge.R
 import com.example.solution_challenge.User
 import com.example.solution_challenge.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -33,7 +32,7 @@ class ProfileFragment : Fragment() {
         userDataList =  ArrayList()
         mAuth = FirebaseAuth.getInstance()
         val uid = mAuth.currentUser?.uid
-        mDbRef = FirebaseDatabase.getInstance().getReference()
+        mDbRef = FirebaseDatabase.getInstance().reference
 
 
 ////        Setting name and email

@@ -6,7 +6,7 @@ class User {
     var uid : String? = null
     var img : String?=null
     var contributor :String?=null
-    constructor(){}
+    constructor()
 
     constructor(name:String? , email:String? , uid:String?)
     {
