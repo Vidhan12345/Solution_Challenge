@@ -3,5 +3,5 @@
     <string name="img_btn" />
     <string name="img_btn1">Image Btn</string>
     <string name="maps_api">AIzaSyAVO2TrXEatbnGGg3gQGO8Kaelry99rz8o</string>
-
+    <string name="title_activity_contri_details">ContriDetailsActivity</string>
 </resources>

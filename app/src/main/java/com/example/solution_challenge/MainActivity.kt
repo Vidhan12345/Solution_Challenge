@@ -3,7 +3,7 @@ package com.example.solution_challenge
 import Fragments.HomeFragment
 import Fragments.MapFragment
 import Fragments.ProfileFragment
-import Fragments.PostFragment
+import Fragments.RequestFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_request -> {
-                    replaceFragment(PostFragment())
+                    replaceFragment(RequestFragment())
                     true
                 }
                 R.id.bottom_profile -> {

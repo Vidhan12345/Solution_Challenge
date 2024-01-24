@@ -1,8 +1,10 @@
 package Fragments
 
 import android.Manifest
+import android.content.ContentValues
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,8 +31,10 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMapBinding.inflate(inflater, container, false)
+
+
         return binding.root
     }
 
@@ -63,7 +67,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 LOCATION_PERMISSION_REQUEST_CODE
             )
         }
+
     }
+
 
     private fun showCurrentLocation() {
         // Check if location permission is granted
@@ -78,6 +84,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                     location?.let {
                         // Add a marker at the current location
                         val currentLocation = LatLng(it.latitude, it.longitude)
+                        Log.d(ContentValues.TAG,"current Location $currentLocation")
                         googleMap.addMarker(MarkerOptions().position(currentLocation).title("You are here"))
                         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, DEFAULT_ZOOM))
                     }

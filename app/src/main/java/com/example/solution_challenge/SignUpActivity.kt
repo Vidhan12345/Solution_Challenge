@@ -58,7 +58,7 @@ class SignUpActivity : AppCompatActivity() {
                     auser.name = name
                     auser.email = email
                     auser.uid = user.uid
-//Setting data
+                    //Setting data
                     Firebase.firestore.collection(USER_NODE)
                         .document(Firebase.auth.currentUser!!.uid).set(auser)
                     finish()
