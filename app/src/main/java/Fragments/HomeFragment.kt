@@ -33,20 +33,22 @@ private lateinit var intent: Intent
             startActivity(intent)
         }
 
-        var postList =ArrayList<Post>()!!
-        var adapter = PostAdapter(requireContext(), postList )
-        binding.rv.layoutManager = LinearLayoutManager(this.context)
-        binding.rv.adapter
+        var postList = ArrayList<Post>()!!
+        var postadapter = PostAdapter(requireContext(), postList )
+        binding.rv.layoutManager = LinearLayoutManager(requireContext())
+        binding.rv.adapter = postadapter
+
         //        Making db for Post Images
-        var tempList = arrayListOf<Post>()
+        val tempList = arrayListOf<Post>()
         Firebase.firestore.collection(POST).get().addOnSuccessListener {
-            for (i in it.documents){
-                var post:Post = i.toObject<Post>()!!
+            result->
+            for (i in result){
+                val post:Post = i.toObject()
                 tempList.add(post)
-                Toast.makeText(context,"Post Done ",Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"Post Done ",Toast.LENGTH_SHORT).show()
             }
             postList.addAll(tempList)
-            adapter.notifyDataSetChanged()
+         postadapter.notifyDataSetChanged()
         }
 
 

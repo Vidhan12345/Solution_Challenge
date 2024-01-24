@@ -18,8 +18,9 @@ import com.google.firebase.firestore.firestore
 class PostActivity : AppCompatActivity() {
     private lateinit var binding :ActivityPostBinding
     private var auth = FirebaseAuth.getInstance()
+    private lateinit var post: Post
     var imageUrl:String? = null
-    private var launcher = registerForActivityResult(ActivityResultContracts.GetContent())  { uri ->
+     private var launcher = registerForActivityResult(ActivityResultContracts.GetContent())  { uri ->
         uri?.let {
             uploadImage(uri, USER_PROFILE_FOLDER) {
                     url->
@@ -39,11 +40,11 @@ class PostActivity : AppCompatActivity() {
         binding.roundedImageView.setOnClickListener{
             launcher.launch("image/*")
         }
+        post= Post()
         binding.postBtn.setOnClickListener {
-            val post: Post = Post(
-                imageUrl.toString(),
-                binding.caption.editableText.toString(),
-                auth.currentUser?.displayName.toString()
+            post = Post( imageUrl.toString(),
+                binding.caption.editableText.toString()
+//                auth.currentUser?.displayName.toString()
             )
             Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {
             Firebase.firestore.collection(POST).document(Firebase.auth.currentUser!!.uid).set(post)
