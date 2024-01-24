@@ -8,9 +8,14 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.instagramclone.utils.USER_NODE
+import com.example.solution_challenge.model.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var editName: EditText
@@ -19,6 +24,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var btnSignUp: Button
     private lateinit var mAuth : FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
+    private lateinit var auser:User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -29,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
         editName = findViewById(R.id.et_name)
         btnSignUp = findViewById(R.id.btn_signUp)
         mAuth = FirebaseAuth.getInstance()
-
+        auser= User()
         btnSignUp.setOnClickListener {
             val email = editEmail.text.toString()
             val name = editName.text.toString()
@@ -48,6 +54,13 @@ class SignUpActivity : AppCompatActivity() {
                     addUserToDatabase(name,email,user?.uid!!)
                     val intent = Intent(this@SignUpActivity,MainActivity::class.java)
                     Toast.makeText(this,"Added to database",Toast.LENGTH_LONG).show()
+
+                    auser.name = name
+                    auser.email = email
+                    auser.uid = user.uid
+//Setting data
+                    Firebase.firestore.collection(USER_NODE)
+                        .document(Firebase.auth.currentUser!!.uid).set(auser)
                     finish()
                     startActivity(intent)
                 } else {

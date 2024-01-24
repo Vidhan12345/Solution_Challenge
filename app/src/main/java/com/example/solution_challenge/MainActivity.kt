@@ -3,11 +3,9 @@ package com.example.solution_challenge
 import Fragments.HomeFragment
 import Fragments.MapFragment
 import Fragments.ProfileFragment
-import Fragments.RequestFragment
-import android.content.Intent
+import Fragments.PostFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
@@ -30,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_request -> {
-                    replaceFragment(RequestFragment())
+                    replaceFragment(PostFragment())
                     true
                 }
                 R.id.bottom_profile -> {

@@ -1,4 +1,4 @@
-package com.example.solution_challenge
+package com.example.solution_challenge.model
 
 class User {
     var name : String? = null
@@ -6,6 +6,7 @@ class User {
     var uid : String? = null
     var img : String?=null
     var contributor :String?=null
+
     constructor()
 
     constructor(name:String? , email:String? , uid:String?)

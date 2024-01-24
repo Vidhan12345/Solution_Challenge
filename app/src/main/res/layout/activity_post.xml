@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="-64dp"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/post">
+
+    <Button
+        android:id="@+id/cancle_btn"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:text="cancle" />
+
+    <Button
+        android:id="@+id/post_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:backgroundTint="#03A9F4"
+        android:text="post" />
+  </LinearLayout>
+
+  <com.google.android.material.appbar.MaterialToolbar
+      android:id="@+id/materialToolbar"
+      android:layout_width="409dp"
+      android:layout_height="wrap_content"
+      android:background="#EAE0E0"
+      android:minHeight="?attr/actionBarSize"
+      android:theme="?attr/actionBarTheme"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+
+  <ImageView
+      android:id="@+id/roundedImageView"
+      android:layout_width="0dp"
+      android:layout_height="274dp"
+      android:scaleType="fitCenter"
+      android:src="@drawable/add_profile"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/materialToolbar"
+      app:layout_constraintVertical_bias="0.231"
+ />
+
+  <!--    app:riv_oval="true"-->
+
+  <EditText
+      android:id="@+id/caption"
+      android:layout_width="333dp"
+      android:layout_height="49dp"
+      android:ems="10"
+      android:hint="caption"
+      android:inputType="text"
+      android:minHeight="48dp"
+      app:layout_constraintEnd_toEndOf="@+id/roundedImageView"
+      app:layout_constraintStart_toStartOf="@+id/roundedImageView"
+      app:layout_constraintTop_toBottomOf="@+id/roundedImageView" />
+
+  <LinearLayout
+      android:id="@+id/post"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="32dp"
+      android:gravity="center"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/caption"
+      app:layout_constraintVertical_bias="0.251">
+
+
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
