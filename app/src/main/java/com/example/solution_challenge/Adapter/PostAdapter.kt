@@ -31,7 +31,7 @@ class PostAdapter(var context: Context, var postList: ArrayList<Post>):RecyclerV
         holder.binding.userPostCaption.text =  postList[position].caption
 
 //        holder.binding.userPostName.text = postList.get(position).name
-//        Picasso.get().load(postList[position].postUrl).into(holder.binding.userPostImage)
+        Picasso.get().load(postList[position].postUrl).into(holder.binding.userPostImage)
     }
 
 }
