@@ -6,6 +6,14 @@
     tools:context="Fragments.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/teal_green"
+    android:textSize="30sp"
+    android:textColor="@color/black"
+    android:text="@string/app_name"
+    />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,14 +25,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Button"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_background"
+            android:backgroundTint="@color/teal_green"/>
 
         <Button
             android:id="@+id/fh_btn_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="POST"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_background"
+            android:backgroundTint="@color/teal_green"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
