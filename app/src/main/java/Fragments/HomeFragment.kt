@@ -1,5 +1,6 @@
 package Fragments
 
+import android.app.ActionBar
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.toObject
 class HomeFragment : Fragment() {
 private lateinit var binding:FragmentHomeBinding
 private lateinit var intent: Intent
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,7 +34,7 @@ private lateinit var intent: Intent
             intent = Intent(requireContext(),PostActivity::class.java)
             startActivity(intent)
         }
-
+ActionBar.DISPLAY_HOME_AS_UP
         var postList = ArrayList<Post>()!!
         var postadapter = PostAdapter(requireContext(), postList )
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
@@ -50,10 +52,6 @@ private lateinit var intent: Intent
             postList.addAll(tempList)
          postadapter.notifyDataSetChanged()
         }
-
-
-
-
         return binding.root
     }
 

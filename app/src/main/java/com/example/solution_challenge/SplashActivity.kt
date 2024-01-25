@@ -15,15 +15,15 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler(Looper.getMainLooper()).postDelayed({
-//            if (FirebaseAuth.getInstance().currentUser==null){
-//                val intent = Intent(this,SignUpActivity::class.java)
-//                startActivity(intent)
-//            } else{
-//                val intent = Intent(this,MainActivity::class.java)
-//                startActivity(intent)
-//            }
-                            val intent = Intent(this,SignUpActivity::class.java)
+            if (FirebaseAuth.getInstance().currentUser==null){
+                val intent = Intent(this,SignUpActivity::class.java)
                 startActivity(intent)
+            } else{
+                val intent = Intent(this,MainActivity::class.java)
+                startActivity(intent)
+            }
+//                            val intent = Intent(this,SignUpActivity::class.java)
+//                startActivity(intent)
             finish()
         },3000)
     }

@@ -6,27 +6,35 @@
     android:layout_height="wrap_content"
     tools:ignore="MissingDefaultResource"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/user_post_name"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/white"
-        android:hint="user name"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:textColor="@color/black"/>
+<!--    <TextView-->
+<!--        android:id="@+id/user_post_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:hint="user name"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textColor="@color/black"/>-->
     <ImageView
         android:id="@+id/user_post_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/add_profile" />
+        android:src="@drawable/add_profile"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"/>
     <TextView
         android:id="@+id/user_post_caption"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="@color/white"
         android:hint="Caption"
-        android:textAlignment="center"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/dark_pastel_green"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"/>
 </LinearLayout>
