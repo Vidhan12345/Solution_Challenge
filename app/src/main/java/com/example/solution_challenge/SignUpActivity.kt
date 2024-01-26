@@ -40,7 +40,12 @@ class SignUpActivity : AppCompatActivity() {
             val email = editEmail.text.toString()
             val name = editName.text.toString()
             val password = editPassword.text.toString()
-            signUp(name,email,password)
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty()){
+                Toast.makeText(this, "All Fields are required", Toast.LENGTH_SHORT).show()
+            }else
+            {
+                signUp(name,email,password)
+            }
         }
     }
 

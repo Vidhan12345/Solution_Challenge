@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.solution_challenge.Intro.Intro1Activity
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (FirebaseAuth.getInstance().currentUser==null){
-                val intent = Intent(this,SignUpActivity::class.java)
+                val intent = Intent(this,Intro1Activity::class.java)
                 startActivity(intent)
             } else{
                 val intent = Intent(this,MainActivity::class.java)
