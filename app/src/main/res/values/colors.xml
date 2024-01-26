@@ -8,4 +8,10 @@
     <color name="malachite">#35E96B</color>
     <color name="orange">#F3560D</color>
     <color name="dark_pastel_green">#16CA4C</color>
+
+    <color name="colorPrimary">#5C32C7</color>
+    <color name="colorPrimaryDark">#5C32C7</color>
+    <color name="colorAccent">#ff68a5</color>
+    <color name="colorBlack">#c2bdbf</color>
+    <color name="colorBlue">#5552ff</color>
 </resources>
