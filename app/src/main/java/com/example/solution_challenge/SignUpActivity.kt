@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.instagramclone.utils.USER_NODE
 import com.example.solution_challenge.model.User
@@ -22,6 +23,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var editEmail: EditText
     private lateinit var editPassword: EditText
     private lateinit var btnSignUp: Button
+    private lateinit var btnLogIn: TextView
     private lateinit var mAuth : FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
     private lateinit var auser:User
@@ -34,6 +36,7 @@ class SignUpActivity : AppCompatActivity() {
         editPassword = findViewById(R.id.et_password)
         editName = findViewById(R.id.et_name)
         btnSignUp = findViewById(R.id.btn_signUp)
+        btnLogIn = findViewById(R.id.btn_logIn)
         mAuth = FirebaseAuth.getInstance()
         auser= User()
         btnSignUp.setOnClickListener {
@@ -46,6 +49,11 @@ class SignUpActivity : AppCompatActivity() {
             {
                 signUp(name,email,password)
             }
+        }
+
+        btnLogIn.setOnClickListener {
+            val  intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 

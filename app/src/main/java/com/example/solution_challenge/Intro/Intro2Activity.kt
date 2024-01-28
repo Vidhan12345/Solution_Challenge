@@ -4,9 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
+import com.example.solution_challenge.LoginActivity
 import com.example.solution_challenge.R
-import com.example.solution_challenge.SignUpActivity
 
 class Intro2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,9 +14,8 @@ class Intro2Activity : AppCompatActivity() {
 
         val start = findViewById<Button>(R.id.startBt)
         start.setOnClickListener {
-
-            startActivity(Intent(this, SignUpActivity::class.java))
-
+            val  intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
         }
 
     }
