@@ -27,7 +27,7 @@ class PostActivity : AppCompatActivity() {
     private var auth = FirebaseAuth.getInstance()
     private lateinit var post: Post
     private lateinit var userDataList: ArrayList<User>
-//    private lateinit var mDbRef : DatabaseReference
+    private lateinit var mDbRef : DatabaseReference
     var imageUrl: String? = null
     var userName: String? = null
     private var launcher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -50,9 +50,8 @@ class PostActivity : AppCompatActivity() {
         binding.roundedImageView.setOnClickListener {
             launcher.launch("image/*")
         }
-
         post = Post()
-   var  mDbRef = FirebaseDatabase.getInstance().reference
+        mDbRef = FirebaseDatabase.getInstance().reference
 
 ////        Setting name and email
         mDbRef.child("user").addValueEventListener(object : ValueEventListener {

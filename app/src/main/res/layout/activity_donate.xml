@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".DonateActivity">
 
+    <ImageView
+        android:id="@+id/donate_img"
+        android:layout_width="414dp"
+        android:layout_height="426dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_intro1vector" />
+
+    <EditText
+        android:id="@+id/contact_Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter Contact Number"
+        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
+        app:layout_constraintEnd_toEndOf="@+id/btn_donate"
+        app:layout_constraintStart_toStartOf="@+id/btn_donate"
+        app:layout_constraintTop_toBottomOf="@+id/donate_img"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Description of food"
+        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
+        app:layout_constraintTop_toBottomOf="@+id/contact_Number"
+        tools:layout_editor_absoluteX="3dp" />
+
+    <Button
+        android:id="@+id/btn_donate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_green"
+        android:text="DONATE"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donate_img"
+        app:layout_constraintVertical_bias="0.489" />
 </androidx.constraintlayout.widget.ConstraintLayout>
