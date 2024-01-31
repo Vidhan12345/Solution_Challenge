@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
         app:cardElevation="16dp"
         app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="@color/teal_green"
-        >
+        app:cardBackgroundColor="@color/teal_green">
 
             <ImageView
                 android:id="@+id/p_profile_img"

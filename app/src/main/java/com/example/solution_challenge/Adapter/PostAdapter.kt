@@ -29,7 +29,7 @@ class PostAdapter(var context: Context, var postList: ArrayList<Post>):RecyclerV
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.userPostImage
         holder.binding.userPostCaption.text =  postList[position].caption
-
+        holder.binding.userNamePost.text = postList[position].name
 //        holder.binding.userPostName.text = postList.get(position).name
         Picasso.get().load(postList[position].postUrl).into(holder.binding.userPostImage)
     }

@@ -34,7 +34,6 @@ private lateinit var intent: Intent
             intent = Intent(requireContext(),PostActivity::class.java)
             startActivity(intent)
         }
-ActionBar.DISPLAY_HOME_AS_UP
         var postList = ArrayList<Post>()!!
         var postadapter = PostAdapter(requireContext(), postList )
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
@@ -44,6 +43,7 @@ ActionBar.DISPLAY_HOME_AS_UP
         val tempList = arrayListOf<Post>()
         Firebase.firestore.collection(POST).get().addOnSuccessListener {
             result->
+            tempList.clear()
             for (i in result){
                 val post:Post = i.toObject()
                 tempList.add(post)
