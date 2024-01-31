@@ -27,7 +27,7 @@ class PostActivity : AppCompatActivity() {
     private var auth = FirebaseAuth.getInstance()
     private lateinit var post: Post
     private lateinit var userDataList: ArrayList<User>
-    private lateinit var mDbRef : DatabaseReference
+//    private lateinit var mDbRef : DatabaseReference
     var imageUrl: String? = null
     var userName: String? = null
     private var launcher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -52,7 +52,7 @@ class PostActivity : AppCompatActivity() {
         }
 
         post = Post()
-      mDbRef = FirebaseDatabase.getInstance().reference
+   var  mDbRef = FirebaseDatabase.getInstance().reference
 
 ////        Setting name and email
         mDbRef.child("user").addValueEventListener(object : ValueEventListener {
@@ -80,8 +80,7 @@ class PostActivity : AppCompatActivity() {
                 Firebase.firestore.collection(POST).document(Firebase.auth.currentUser!!.uid)
                     .set(post)
                     .addOnSuccessListener {
-                        val intent =Intent(this@PostActivity, HomeFragment::class.java)
-                            startActivity(intent)
+                            startActivity(Intent(this@PostActivity, HomeFragment::class.java))
                         finish()
                     }
             }
