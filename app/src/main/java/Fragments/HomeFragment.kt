@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.instagramclone.utils.POST
 import com.example.solution_challenge.Adapter.PostAdapter
+import com.example.solution_challenge.DonateActivity
 import com.example.solution_challenge.PostActivity
 import com.example.solution_challenge.databinding.FragmentHomeBinding
 import com.example.solution_challenge.model.Post
@@ -34,6 +35,11 @@ private lateinit var intent: Intent
             intent = Intent(requireContext(),PostActivity::class.java)
             startActivity(intent)
         }
+        binding.donate.setOnClickListener {
+            intent = Intent(requireContext(),DonateActivity::class.java)
+            startActivity(intent)
+        }
+
         var postList = ArrayList<Post>()!!
         var postadapter = PostAdapter(requireContext(), postList )
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
