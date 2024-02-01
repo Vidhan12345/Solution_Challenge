@@ -40,6 +40,7 @@ private lateinit var intent: Intent
             startActivity(intent)
         }
 
+
         var postList = ArrayList<Post>()!!
         var postadapter = PostAdapter(requireContext(), postList )
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
@@ -53,7 +54,6 @@ private lateinit var intent: Intent
             for (i in result){
                 val post:Post = i.toObject()
                 tempList.add(post)
-//                Toast.makeText(context,"Post Done ",Toast.LENGTH_SHORT).show()
             }
             postList.addAll(tempList)
          postadapter.notifyDataSetChanged()

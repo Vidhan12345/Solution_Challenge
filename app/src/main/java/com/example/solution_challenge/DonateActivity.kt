@@ -9,6 +9,8 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -25,13 +27,20 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.firestore
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.concurrent.thread
 
 class DonateActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDonateBinding
-    private lateinit var dataRef: FirebaseDatabase
+    private lateinit var dataRef: DatabaseReference
     private lateinit var auth: FirebaseAuth
     private lateinit var userName: String
     private lateinit var donate: Donate
@@ -60,13 +69,14 @@ class DonateActivity : AppCompatActivity() {
         binding = ActivityDonateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnDonate.setOnClickListener {
+        binding.donateImg.setOnClickListener {
             launcher.launch("image/*")
         }
 
-        userName = ""
+
+
         auth = FirebaseAuth.getInstance()
-        dataRef = FirebaseDatabase.getInstance()
+        dataRef = FirebaseDatabase.getInstance().reference
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         // Initialize locationListener
@@ -84,9 +94,21 @@ class DonateActivity : AppCompatActivity() {
 //                    Toast.LENGTH_SHORT
 //                ).show()
             }
-
-
         }
+        dataRef.child("user").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (postSnapshot in snapshot.children) {
+                    val userData = postSnapshot.getValue(User::class.java)
+                    if (auth.currentUser?.uid == userData?.uid) {
+                        userName = userData?.name.toString()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle error if needed
+            }
+        })
 
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -102,45 +124,38 @@ class DonateActivity : AppCompatActivity() {
             // Start location updates
             getLocation()
         }
-        dataRef.getReference().child("user").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (postSnapshot in snapshot.children) {
-                    val userData = postSnapshot.getValue(User::class.java)
-                    if (auth.currentUser?.uid == userData?.name) {
-                        userName = userData?.name.toString()
-                    }
-                }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                // Handle error if needed
-            }
-        })
 
         donate = Donate()
         binding.btnDonate.setOnClickListener {
-            val location = "$currentLatitude,$currentLongitude"
-            Toast.makeText(this, "My Location $location", Toast.LENGTH_SHORT).show()
-            donate = Donate(
-                userName,
-                imageUrl.toString(),
-                location,
-                binding.description.toString(),
-                binding.contactNumber.toString()
-            )
-            Firebase.firestore.collection(DONATE).document().set(donate).addOnSuccessListener {
-                Firebase.firestore.collection(DONATE).document(Firebase.auth.currentUser!!.uid)
-                    .set(donate)
-                    .addOnSuccessListener {
-                        startActivity(Intent(this, MainActivity::class.java))
-                        finish()
-                    }
-            }
+            addDonate()
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
+
+    private fun addDonate() {
+        val location = "$currentLatitude,$currentLongitude"
+        Toast.makeText(this, "My Location $location", Toast.LENGTH_SHORT).show()
+        donate = Donate(
+            userName,
+            imageUrl.toString(),
+            "location",
+            binding.description.text.toString(),
+            binding.contactNumber.text.toString()
+        )
+        Firebase.firestore.collection(DONATE).document().set(donate).addOnSuccessListener {
+            Firebase.firestore.collection(DONATE).document(Firebase.auth.currentUser!!.uid)
+                .set(donate)
+                .addOnSuccessListener {
+                    Toast.makeText(this@DonateActivity, "Donate added", Toast.LENGTH_SHORT)
+                        .show()
+                }
         }
 
-
-
     }
+
+
     private fun getLocation() {
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -181,7 +196,9 @@ class DonateActivity : AppCompatActivity() {
             }
         }
     }
+
     companion object {
         private const val PERMISSION_REQUEST_ACCESS_FINE_LOCATION = 100
     }
+
 }

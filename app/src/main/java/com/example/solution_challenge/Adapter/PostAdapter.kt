@@ -18,8 +18,6 @@ class PostAdapter(var context: Context, var postList: ArrayList<Post>):RecyclerV
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
       var binding = MyPostDesignBinding.inflate(LayoutInflater.from(context),parent,false)
         return ViewHolder(binding)
-//        val view =  LayoutInflater.from(parent.context).inflate(R.layout.note_item,parent,false)
-//        return NoteViewHolder(view)
     }
 
     override fun getItemCount(): Int {
