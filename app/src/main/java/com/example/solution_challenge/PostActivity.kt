@@ -1,6 +1,5 @@
 package com.example.solution_challenge
 
-import Fragments.HomeFragment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,7 +18,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.database
 import com.google.firebase.firestore.firestore
 
 class PostActivity : AppCompatActivity() {
@@ -53,8 +51,9 @@ class PostActivity : AppCompatActivity() {
         post = Post()
         mDbRef = FirebaseDatabase.getInstance().reference
 
+
 ////        Setting name and email
-        mDbRef.child("user").addValueEventListener(object : ValueEventListener {
+      mDbRef.child("user").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (postSnapshot in snapshot.children) {
                     val userData = postSnapshot.getValue(User::class.java)
@@ -79,7 +78,7 @@ class PostActivity : AppCompatActivity() {
                 Firebase.firestore.collection(POST).document(Firebase.auth.currentUser!!.uid)
                     .set(post)
                     .addOnSuccessListener {
-                            startActivity(Intent(this@PostActivity, HomeFragment::class.java))
+                            startActivity(Intent(this@PostActivity, MainActivity::class.java))
                         finish()
                     }
             }
