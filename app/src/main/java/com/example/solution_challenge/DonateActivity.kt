@@ -88,11 +88,6 @@ class DonateActivity : AppCompatActivity() {
                 // Handle location updates here
                 val latitude = location.latitude
                 val longitude = location.longitude
-//                Toast.makeText(
-//                    this@DonateActivity,
-//                    "Latitude: $latitude, Longitude: $longitude",
-//                    Toast.LENGTH_SHORT
-//                ).show()
             }
         }
         dataRef.child("user").addValueEventListener(object : ValueEventListener {
@@ -106,7 +101,7 @@ class DonateActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle error if needed
+
             }
         })
 
