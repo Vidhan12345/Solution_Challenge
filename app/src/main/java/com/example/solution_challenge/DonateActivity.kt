@@ -140,7 +140,7 @@ class DonateActivity : AppCompatActivity() {
         donate = Donate(
             userName,
             imageUrl.toString(),
-            "location",
+            location,
             binding.description.text.toString(),
             binding.contactNumber.text.toString()
         )
