@@ -51,6 +51,7 @@ private lateinit var intent: Intent
         Firebase.firestore.collection(POST).get().addOnSuccessListener {
             result->
             tempList.clear()
+            postList.clear()
             for (i in result){
                 val post:Post = i.toObject()
                 tempList.add(post)

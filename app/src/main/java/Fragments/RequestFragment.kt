@@ -39,6 +39,7 @@ private lateinit var binding : FragmentRequestBinding
         Firebase.firestore.collection(DONATE).get().addOnSuccessListener {
                 result->
             tempList.clear()
+            donateList.clear()
             for (i in result){
                 val donateItem :Donate = i.toObject()
                 tempList.add(donateItem)
