@@ -138,14 +138,12 @@ class DonateActivity : AppCompatActivity() {
             binding.description.text.toString(),
             binding.contactNumber.text.toString()
         )
-        Firebase.firestore.collection(DONATE).document().set(donate).addOnSuccessListener {
             Firebase.firestore.collection(DONATE).document(Firebase.auth.currentUser!!.uid)
                 .set(donate)
                 .addOnSuccessListener {
                     Toast.makeText(this@DonateActivity, "Donate added", Toast.LENGTH_SHORT)
                         .show()
                 }
-        }
 
     }
 

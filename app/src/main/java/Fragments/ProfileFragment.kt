@@ -51,7 +51,6 @@ class ProfileFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         })
-
             return  binding.root
     }
 }
