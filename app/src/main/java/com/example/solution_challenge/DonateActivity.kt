@@ -73,8 +73,7 @@ class DonateActivity : AppCompatActivity() {
             launcher.launch("image/*")
         }
 
-
-
+        userName=""
         auth = FirebaseAuth.getInstance()
         dataRef = FirebaseDatabase.getInstance().reference
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -135,7 +134,7 @@ class DonateActivity : AppCompatActivity() {
         donate = Donate(
             userName,
             imageUrl.toString(),
-            location,
+            binding.location.text.toString(),
             binding.description.text.toString(),
             binding.contactNumber.text.toString()
         )

@@ -29,6 +29,6 @@ var binding = DonateItemBinding.inflate(LayoutInflater.from(context),parent,fals
         holder.binding.foodDescription.text=donateList[position].description
      holder.binding.foodImg
         Picasso.get().load(donateList[position].imgUrl).into(holder.binding.foodImg)
-//        Picasso.get().load(postList[position].postUrl).into(holder.binding.userPostImage)
+//      Picasso.get().load(postList[position].postUrl).into(holder.binding.userPostImage)
     }
 }

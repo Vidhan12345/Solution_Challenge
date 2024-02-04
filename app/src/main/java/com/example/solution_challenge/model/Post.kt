@@ -5,6 +5,7 @@ class Post {
     var postUrl : String=""
     var caption :String=""
     var name:String=""
+    var uid: String = ""
     constructor()
 
     constructor( postUrl:String,caption: String,name:String) {

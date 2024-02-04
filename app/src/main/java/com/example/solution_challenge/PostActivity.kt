@@ -40,6 +40,8 @@ class PostActivity : AppCompatActivity() {
         }
     }
 
+// ...
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPostBinding.inflate(layoutInflater)
@@ -51,47 +53,52 @@ class PostActivity : AppCompatActivity() {
         post = Post()
         mDbRef = FirebaseDatabase.getInstance().reference
 
-
-////        Setting name and email
-      mDbRef.child("user").addValueEventListener(object : ValueEventListener {
+        // Setting name and email
+        mDbRef.child("user").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (postSnapshot in snapshot.children) {
                     val userData = postSnapshot.getValue(User::class.java)
                     if (auth.currentUser?.uid == userData?.uid) {
                         userName = userData?.name.toString()
+
+                        // Enable the post button only when the user's name is fetched
+                        binding.postBtn.isEnabled = true
                     }
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                // Handle error if needed
             }
         });
 
         binding.postBtn.setOnClickListener {
-            post = Post(
-                imageUrl.toString(),
-                binding.caption.editableText.toString(),
-                userName.toString()
-            )
-            Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {
-                Firebase.firestore.collection(POST).document(Firebase.auth.currentUser!!.uid)
+            // Check if userName is not null before proceeding
+            if (userName != null) {
+                post = Post(
+                    imageUrl.toString(),
+                    binding.caption.editableText.toString(),
+                    userName.toString()
+                )
+                val postId = Firebase.firestore.collection(POST).document().id
+                post.uid = postId  // Assign the generated UID to the post
+                Firebase.firestore.collection(POST).document(postId)
                     .set(post)
                     .addOnSuccessListener {
-                            startActivity(Intent(this@PostActivity, MainActivity::class.java))
+                        startActivity(Intent(this@PostActivity, MainActivity::class.java))
                         finish()
                     }
             }
         }
+
 
         setSupportActionBar(binding.materialToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         binding.materialToolbar.setNavigationOnClickListener {
             finish()
-
         }
-
     }
+
 
 }

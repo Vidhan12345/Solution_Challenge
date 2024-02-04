@@ -35,6 +35,17 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_donate"
         app:layout_constraintTop_toBottomOf="@+id/contact_Number"
+        app:layout_constraintVertical_bias="0.189"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Location"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         tools:layout_editor_absoluteX="3dp" />
 
     <Button
@@ -47,7 +58,8 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donate_img"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintVertical_bias="0.87" />
 </androidx.constraintlayout.widget.ConstraintLayout>
