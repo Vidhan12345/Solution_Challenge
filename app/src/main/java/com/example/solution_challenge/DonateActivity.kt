@@ -1,6 +1,5 @@
 package com.example.solution_challenge
 
-import Fragments.HomeFragment
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -9,8 +8,6 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -31,12 +28,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.firestore
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlin.concurrent.thread
 
 class DonateActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDonateBinding

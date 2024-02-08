@@ -17,6 +17,11 @@
         android:icon="@drawable/request"/>
 
     <item
+        android:id="@+id/bottom_reward"
+        android:title="Rewards"
+        android:icon="@drawable/reward"/>
+
+    <item
         android:id="@+id/bottom_profile"
         android:title="Profile"
         android:icon="@drawable/profile1"/>

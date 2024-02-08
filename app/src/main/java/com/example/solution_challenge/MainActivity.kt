@@ -4,6 +4,7 @@ import Fragments.HomeFragment
 import Fragments.MapFragment
 import Fragments.ProfileFragment
 import Fragments.RequestFragment
+import Fragments.RewardFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.bottom_request -> {
                     replaceFragment(RequestFragment())
+                    true
+                }
+                R.id.bottom_reward -> {
+                    replaceFragment(RewardFragment())
                     true
                 }
                 R.id.bottom_profile -> {

@@ -5,5 +5,7 @@
     <string name="maps_api">AIzaSyAVO2TrXEatbnGGg3gQGO8Kaelry99rz8o</string>
     <string name="title_activity_intro1">Intro1Activity</string>
     <string name="title_activity_intro2">Intro2Activity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
