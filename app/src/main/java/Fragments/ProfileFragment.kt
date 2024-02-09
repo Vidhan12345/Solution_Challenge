@@ -27,7 +27,6 @@ class ProfileFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate( inflater, container, false)
-
         userDataList =  ArrayList()
         mAuth = FirebaseAuth.getInstance()
         val uid = mAuth.currentUser?.uid
@@ -43,7 +42,7 @@ class ProfileFragment : Fragment() {
                     if (uid == userData?.uid) {
                         binding.pfName.text = userData?.name.toString()
                         binding.pfEmail.text = userData?.email.toString()
-//                 userDataList.add(userData!!)
+                 userDataList.add(userData!!)
                     }
                 }
             }

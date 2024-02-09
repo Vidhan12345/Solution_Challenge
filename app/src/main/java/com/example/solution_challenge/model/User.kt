@@ -5,10 +5,9 @@ class User {
     var email : String? = null
     var uid : String? = null
 //    var img : String?=null
-//    var contributor :String?=null
+    var contributor :String?=null
 
     constructor()
-
     constructor(name:String? , email:String? , uid:String?)
     {
         this.name = name
@@ -20,7 +19,7 @@ class User {
 //        this.img = img
 //        this.uid = uid
 //    }
-//    constructor(contributor :String?){
-//        this.contributor = contributor
-//    }
+    constructor(contributor :String?){
+        this.contributor = contributor
+    }
 }

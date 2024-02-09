@@ -1,8 +1,11 @@
 package com.example.solution_challenge.Adapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solution_challenge.databinding.ActivityDonateBinding
 import com.example.solution_challenge.databinding.DonateItemBinding
@@ -30,5 +33,19 @@ var binding = DonateItemBinding.inflate(LayoutInflater.from(context),parent,fals
      holder.binding.foodImg
         Picasso.get().load(donateList[position].imgUrl).into(holder.binding.foodImg)
 //      Picasso.get().load(postList[position].postUrl).into(holder.binding.userPostImage)
+                holder.binding.dir.setOnClickListener {
+                    change()
+        }
+    }
+
+    private fun change() {
+        val source = "21.105510529892424, 79.00322354747368"
+        val destination = "21.095100665790703, 78.9783755653517"
+
+        val uri = Uri.parse("https://www.google.com/maps/dir/$source/$destination")
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+         intent.`package` = "com.google.android.apps.maps"
+         startActivity(context,intent,null)
+
     }
 }
