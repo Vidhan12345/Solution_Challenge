@@ -3,25 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
     android:background="@color/teal_green"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    >
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="151dp"
         android:text="Log In Here"
-        android:layout_gravity="center"
         android:textColor="@color/white"
         android:textSize="30dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/et_email"
-        android:layout_width="366dp"
+        android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginStart="29dp"
         android:layout_marginTop="30dp"
@@ -32,13 +32,14 @@
         android:textColorHint="@color/black"
 
         />
+
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="359dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_marginStart="29dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="23dp"
-        android:layout_marginStart="29dp"
         android:background="@drawable/edit_background"
         android:hint="Password"
         android:padding="15dp"
@@ -50,26 +51,26 @@
         android:id="@+id/btn_logIn"
         android:layout_width="133dp"
         android:layout_height="49dp"
-        android:layout_marginTop="30dp"
         android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:background="@drawable/btn_background"
         android:padding="5dp"
         android:text="Log In"
         android:textColor="@color/white"
         android:textSize="20sp"
 
-         />
+        />
+
     <TextView
         android:id="@+id/btn_signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:layout_gravity="center"
+        android:layout_marginTop="25dp"
         android:text="Don't Have Account? Sign Up here"
         android:textColor="@color/white"
         android:textSize="20dp"
 
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
 </LinearLayout>
