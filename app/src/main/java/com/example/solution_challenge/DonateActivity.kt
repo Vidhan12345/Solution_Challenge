@@ -121,7 +121,6 @@ class DonateActivity : AppCompatActivity() {
 
     private fun addDonate() {
         val location = "$currentLatitude,$currentLongitude"
-        Toast.makeText(this, "My Location $location", Toast.LENGTH_SHORT).show()
         donate = Donate(
             userName,
             imageUrl.toString(),
