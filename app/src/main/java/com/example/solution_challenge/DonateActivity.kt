@@ -95,20 +95,20 @@ class DonateActivity : AppCompatActivity() {
             }
         })
 
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                PERMISSION_REQUEST_ACCESS_FINE_LOCATION
-            )
-        } else {
-            // Start location updates
-            getLocation()
-        }
+//        if (ContextCompat.checkSelfPermission(
+//                this,
+//                Manifest.permission.ACCESS_FINE_LOCATION
+//            ) != PackageManager.PERMISSION_GRANTED
+//        ) {
+//            ActivityCompat.requestPermissions(
+//                this,
+//                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+//                PERMISSION_REQUEST_ACCESS_FINE_LOCATION
+//            )
+//        } else {
+//            // Start location updates
+//            getLocation()
+//        }
 
 
         donate = Donate()

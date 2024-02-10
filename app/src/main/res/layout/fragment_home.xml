@@ -5,51 +5,27 @@
     android:layout_height="match_parent"
     tools:context="Fragments.HomeFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:backgroundTint="@color/teal_green"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/teal_green"
-            android:text="@string/app_name"
-            android:textColor="@color/black"
-            android:textSize="28dp" />
-
-        <Button
-            android:id="@+id/donate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/edit_background"
-            android:backgroundTint="@color/teal_green"
-            android:text="Donate"
-            android:textSize="20sp" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="176dp" />
 
     <ImageView
         android:id="@+id/fh_btn_post"
@@ -59,5 +35,21 @@
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/donate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/edit_background"
+        android:backgroundTint="@color/teal_green"
+        android:text="Donate"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

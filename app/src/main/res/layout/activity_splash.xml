@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_background"
         android:paddingStart="10dp"
-        android:text="Made By Naruto"
+        android:text="Share Meal"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
