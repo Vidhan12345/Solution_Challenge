@@ -46,7 +46,7 @@
             android:layout_height="200sp"
             android:src="@color/orange" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp">
@@ -56,111 +56,100 @@
                 android:id="@+id/tv_food_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40sp"
                 android:layout_marginStart="5sp"
+                android:layout_marginTop="5dp"
                 android:text="Description :- "
                 android:textSize="25dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/food_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="5dp"
                 android:text="Food Description"
                 android:textSize="25dp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_food_description"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40sp"
                 android:layout_marginStart="5sp"
+                android:layout_marginTop="5dp"
                 android:text="Location :- "
                 android:textSize="25dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_food_description" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="5dp"
                 android:text="Location"
                 android:textSize="25dp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_location"
-                app:layout_constraintTop_toBottomOf="@+id/food_description" />
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/contactNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="5dp"
 
                 android:text="Contact No"
                 android:textSize="25dp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_contactNumber"
-                app:layout_constraintTop_toBottomOf="@+id/location" />
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/tv_contactNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:layout_marginTop="5dp"
                 android:text="Contact No :- "
                 android:textSize="25dp"
-                android:layout_marginTop="40sp"
-                android:layout_marginStart="5sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+                android:textStyle="bold" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Accept request"
-                android:textSize="16dp"
-                android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:backgroundTint="@color/dark_pastel_green"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="Accept request"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
 
             <Button
                 android:id="@+id/dir"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/dark_pastel_green"
                 android:text="Directions"
                 android:textColor="@color/black"
-                android:backgroundTint="@color/dark_pastel_green"
-                android:textSize="16dp"
-                android:layout_marginEnd="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textSize="16dp" />
+        </LinearLayout>
 
 
     </LinearLayout>
