@@ -76,7 +76,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
 
             <TextView
                 android:id="@+id/tv_location"
@@ -125,33 +126,38 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="15dp">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginRight="10dp"
-                android:backgroundTint="@color/dark_pastel_green"
                 android:text="Accept request"
+                android:textSize="16dp"
                 android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/dark_pastel_green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/dir"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/dark_pastel_green"
                 android:text="Directions"
                 android:textColor="@color/black"
-                android:textSize="16dp" />
-        </LinearLayout>
+                android:backgroundTint="@color/dark_pastel_green"
+                android:textSize="16dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>
